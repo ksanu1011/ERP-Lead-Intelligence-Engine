@@ -9,3 +9,24 @@ license = { text = "MIT" }
 authors = [
     { name = "Kumar Sanu" }
 ]
+
+dependencies = [
+    "groq",
+    "pydantic>=2.0",
+    "pydantic-settings>=2.0",
+    "python-dotenv",
+    "openpyxl"
+]
+
+[project.scripts]
+erp-ai = "src.cli:main"
+
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["src"]
+
+[tool.setuptools.package-dir]
+"" = "."
