@@ -15,7 +15,10 @@ dependencies = [
     "pydantic>=2.0",
     "pydantic-settings>=2.0",
     "python-dotenv",
-    "openpyxl"
+    "openpyxl",
+    "fastapi",
+    "uvicorn",
+    "tavily"
 ]
 
 [project.scripts]

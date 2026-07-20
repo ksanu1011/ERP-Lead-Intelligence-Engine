@@ -1,7 +1,5 @@
 from __future__ import annotations
 
-from typing import Any
-
 from pydantic import BaseModel, Field, HttpUrl, field_validator
 
 
@@ -9,7 +7,7 @@ class CompanyProfile(BaseModel):
     """Factual profile information for a company."""
 
     name: str = Field(..., description="Official company name.")
-    website: HttpUrl | None = Field(default=None, description="Company website URL.")
+    website: HttpUrl | None = Field(default=None, description="Official company website URL.")
     description: str | None = Field(default=None, description="Short factual description of the company.")
     industry: str | None = Field(default=None, description="Primary industry or business sector.")
     headquarters: str | None = Field(default=None, description="Primary headquarters location.")
@@ -22,6 +20,10 @@ class CompanyProfile(BaseModel):
     erp_systems: list[str] = Field(default_factory=list, description="ERP systems or platforms associated with the company.")
     technologies: list[str] = Field(default_factory=list, description="Technology stack or platforms used by the company.")
     linkedin_url: HttpUrl | None = Field(default=None, description="Company LinkedIn profile URL.")
+    careers_url: HttpUrl | None = Field(default=None, description="Company careers page URL.")
+    investor_relations_url: HttpUrl | None = Field(default=None, description="Investor relations page URL.")
+    news_url: HttpUrl | None = Field(default=None, description="Company news or press URL.")
+    contact_url: HttpUrl | None = Field(default=None, description="Company contact page URL.")
     source_urls: list[HttpUrl] = Field(default_factory=list, description="Source URLs used to gather the profile information.")
 
     @field_validator("employee_count")
